@@ -1,0 +1,44 @@
+<header class="navbar navbar-default navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" ng-click="isCollapsed = !isCollapsed">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand visible-xs" ui-sref="root.home" ><img class="menu-img" src="/static/img/logo.png" alt="logo"></a>
+            </div>
+            <nav class="hidden-xs">
+                <ul class="nav navbar-nav">
+                    <a ui-sref="root.home" role="button" class="navbar-brand">
+                        <img class="menu-img" src="/static/img/logo.png" alt="Helios">
+                    </a>
+                    <li ng-class="{'active': $state.current.name === 'root.home'}"><a ui-sref="root.home">{{'Home' | translate: this}}</a></li>
+                    <li><a scroll-to="contact" offset="50">{{'Contact' | translate: this}}</a></li>
+                </ul>
+                <div class="btn-group pull-right">
+                    <label class="btn btn-primary btn-sm" ng-model="language" btn-radio="'en'">English</label>
+                    <label class="btn btn-primary btn-sm" ng-model="language" btn-radio="'zhs'">简体中文</label>
+                    <label class="btn btn-primary btn-sm" ng-model="language" btn-radio="'zht'">繁體中文</label>
+                </div>
+            </nav>
+            <nav class="visible-xs" collapse="!isCollapsed">
+                <ul class="nav navbar-nav">
+                    <li ng-class="{'active': $state.current.name === 'root.home'}"><a ui-sref="root.home" ng-click="isCollapsed = !isCollapsed">{{'Home' | translate: this}}</a></li>
+                    <li><a scroll-to="contact" offset="50" ng-click="isCollapsed = !isCollapsed">{{'Contact' | translate: this}}</a></li>
+                    <li ng-class="{'active': language === 'en'}">
+                        <a ng-click="language = 'en'; isCollapsed = !isCollapsed">English</a>
+                    </li>
+                    <li ng-class="{'active': language === 'zhs'}">
+                        <a ng-click="language = 'zhs'; isCollapsed = !isCollapsed">简体中文</a>
+                    </li>
+                    <li ng-class="{'active': language === 'zht'}">
+                        <a ng-click="language = 'zht'; isCollapsed = !isCollapsed">繁體中文</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>

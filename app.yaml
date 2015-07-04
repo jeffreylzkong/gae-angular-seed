@@ -1,0 +1,48 @@
+application: applicationname
+version: 1
+runtime: python27
+threadsafe: true
+api_version: 1
+
+default_expiration: "10m"
+
+handlers:
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+
+- url: /lib/(.+)
+  static_files: app/lib/\1
+  upload: app/lib/(.+)
+
+- url: /css/(.*\.css)
+  static_files: app/css/\1
+  upload: app/css/.*\.css
+  mime_type: text/css; charset=utf-8
+
+- url: /partials/(.*\.html)
+  static_files: app/partials/\1
+  upload: app/partials/.*\.html
+  mime_type: text/html; charset=utf-8
+
+- url: /js/(.*\.js)
+  static_files: app/js/\1
+  upload: app/js/.*\.js
+  mime_type: text/javascript; charset=utf-8
+
+- url: /static/(.+)
+  static_files: app/static/\1
+  upload: app/static/(.)
+
+- url: /api/.*
+  script: main.app
+
+- url: (.*)/
+  static_files: app\1/index.html
+  upload: app/index\.html
+  mime_type: text/html; charset=utf-8
+
+
+libraries:
+- name: webapp2
+  version: "2.5.2"

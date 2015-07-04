@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <!-- using twitter bootstrap, but of course -->
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/bootstrap.css">
+    <!-- styles for our own style are located here -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <!-- Include angular.js, ui-bootstrap.js and angular-ui-router.js-->
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/ui-bootstrap/ui-bootstrap-tpls-0.12.1.js"></script>
+    <script src="lib/ui-router/angular-ui-router.min.js"></script>
+    <script src="lib/ngStorage/ngStorage.js"></script>
+    <script src="lib/ngSanitize/sanitize.js"></script>
+    
+    <script src="lib/angular-smooth-scroll/angular-smooth-scroll.js"></script>
+
+
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/directives.js"></script>
+    <script src="js/filters.js"></script>
+
+    <title>Angular GAE seed</title>
+  </head>
+  <body ng-app="myApp">
+    <div class="header" ui-view="header"></div>
+    <!--<div ui-view="chat"></div>-->
+    <div id="top" class="master" ui-view="main"></div>
+    <div class="footer" ui-view="footer"></div>
+  </body>
+</html>
