@@ -8,13 +8,9 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand visible-xs" ui-sref="root.home" ><img class="menu-img" src="/static/img/logo.png" alt="logo"></a>
             </div>
             <nav class="hidden-xs">
                 <ul class="nav navbar-nav">
-                    <a ui-sref="root.home" role="button" class="navbar-brand">
-                        <img class="menu-img" src="/static/img/logo.png" alt="Helios">
-                    </a>
                     <li ng-class="{'active': $state.current.name === 'root.home'}"><a ui-sref="root.home">{{'Home' | translate: this}}</a></li>
                     <li><a scroll-to="contact" offset="50">{{'Contact' | translate: this}}</a></li>
                 </ul>
